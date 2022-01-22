@@ -1,0 +1,16 @@
+// import base files
+@use "../scss/base/base" as *;
+@use "../scss/base/reset" as *;
+@use "../scss/base/typography" as *;
+
+// import abstracts files
+@use "../scss/abstracts/variables" as *;
+@use "../scss/abstracts/mixins" as *;
+
+// import layout files
+@use "../scss/layout/body" as *;
+@use "../scss/layout/container" as *;
+@use "../scss/layout/faq-card" as *;
+@use "../scss/layout/image-section" as *;
+@use "../scss/layout/text-section" as *;
+@use "../scss/layout/attribution" as *;

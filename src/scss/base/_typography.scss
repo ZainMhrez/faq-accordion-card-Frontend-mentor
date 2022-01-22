@@ -1,0 +1,7 @@
+// import variables
+@use '../abstracts/variables' as *;
+
+body {
+  font-family: 'Kumbh Sans', sans-serif;
+  font-size: $font;
+}

@@ -1,0 +1,106 @@
+@use "abstracts/variables" as *;
+@use "abstracts/mixins" as *;
+
+/* Text section */
+.text-section {
+  width: 100%;
+  height: fit-content;
+
+  h1 {
+    font-size: 2rem;
+    text-align: center;
+    transform: translateY(-1em);
+    color: $primary-txt-color;
+  }
+
+  .questions-container {
+
+    .faq {
+      border-bottom: 1px solid $dividers-color;
+      cursor: pointer;
+
+      .question {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 1.3em;
+        padding-bottom: 1.3em;
+
+        span {
+          font-size: $font;
+          color: $question-color;
+          letter-spacing: 0.2px;
+          &:hover {
+            color: $arrow-color;
+          }
+        }
+        img {
+          width: 10px;
+          height: 7px;
+          transition: transform 0.5s ease;
+        }
+      }
+
+      .answer {
+        overflow: hidden;
+        max-height: 0;
+        max-width: 87%;
+        line-height: 1.5;
+        font-size: $font;
+        color: $answer-color;
+        transition: max-height 0.5s ease;
+      }
+
+      &[aria-expanded= "true"] {
+        .question {
+          span {
+            color: $primary-txt-color;
+            font-weight: 700;
+          }
+          img {
+            transform: rotate(180deg);
+          }
+        }
+        .answer {
+          max-height: 5em;
+          margin-bottom: 1em;
+          @include z-animation(fade 0.7s ease-in-out);
+        }
+      }
+    }
+  }
+}
+
+@include breakpoints("min-width: 991px") {
+  .text-section {
+    flex-basis: 50%;
+    height: 100%;
+    padding: 7em 7em 7em 0;
+
+    h1 {
+      text-align: left;
+      transform: translateY(0);
+    }
+
+    .questions-container {
+      margin-top: 2em;
+
+      .question {
+        padding-top: 1.5em;
+        padding-bottom: 1.5em;
+      }
+    }
+  }
+}
+
+/* add animation to the faq answer */
+@include z-keyframes(fade) {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}

@@ -1,0 +1,26 @@
+@use "abstracts/mixins" as *;
+
+/* Faq card */
+.faq-card {
+  width: 100%;
+  min-height: 72vh;
+  padding: 0 2em;
+  background-color: #fff;
+  border-radius: 2em;
+}
+
+@include breakpoints("min-width: 991px") {
+  .faq-card {
+    width: 90%;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    padding: 0;
+  }
+}
+
+@include breakpoints("min-width: 1300px") {
+  .faq-card {
+    width: 75%;
+  }
+}

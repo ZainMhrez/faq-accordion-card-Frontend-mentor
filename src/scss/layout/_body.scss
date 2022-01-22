@@ -1,0 +1,9 @@
+@use "../abstracts/variables" as *;
+
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: grid;
+  background: linear-gradient(to top, $bg-gradient-soft-blue, $bg-gradient-soft-violet);
+}

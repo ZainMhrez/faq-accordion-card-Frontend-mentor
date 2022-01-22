@@ -1,0 +1,22 @@
+// add animation to an element
+@mixin z-animation ($value) {
+	-webkit-animation: $value;
+	        animation: $value;
+}
+
+// generate keyframe animation
+@mixin z-keyframes($animtion-name) {
+  @-webkit-keyframes #{$animtion-name} {
+    @content;
+  }
+  @keyframes #{$animtion-name} {
+    @content;
+  }
+}
+
+// Media query
+@mixin breakpoints($point) {
+  @media ($point) {
+    @content;
+  }
+}
